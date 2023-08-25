@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.6 on darwin)" generated="20230825 14:18:35.632" rpa="false" schemaversion="4">
+<suite id="s1" name="NopCommerce" source="/Users/bekamakharadze/PycharmProjects/RobotFramework/NopCommerce.robot">
+<test id="s1-t1" name="Register Test" line="21">
+<kw name="Launch Browser">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_BINARY}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230825 14:18:35.727" level="INFO">Opening browser 'Chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<status status="PASS" starttime="20230825 14:18:35.726" endtime="20230825 14:18:39.184"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230825 14:18:39.185" endtime="20230825 14:18:39.674"/>
+</kw>
+<kw name="Is Home Page Opened" library="HomePage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${login_btn}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230825 14:18:39.688" level="INFO">Element 'xpath://*[contains(text(), 'Log in')][1]' is displayed.</msg>
+<status status="PASS" starttime="20230825 14:18:39.674" endtime="20230825 14:18:39.688"/>
+</kw>
+<status status="PASS" starttime="20230825 14:18:39.674" endtime="20230825 14:18:39.688"/>
+</kw>
+<status status="PASS" starttime="20230825 14:18:35.726" endtime="20230825 14:18:39.688"/>
+</kw>
+<kw name="Click Home Page Register Button" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${register_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230825 14:18:39.689" level="INFO">Clicking element 'xpath://*[contains(text(), 'Register')][1]'.</msg>
+<status status="PASS" starttime="20230825 14:18:39.689" endtime="20230825 14:18:40.719"/>
+</kw>
+<status status="PASS" starttime="20230825 14:18:39.689" endtime="20230825 14:18:40.720"/>
+</kw>
+<kw name="Is Register Page Opened" library="RegisterPage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${first_name_input}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230825 14:18:40.739" level="INFO">Element 'xpath://*[@id="FirstName"]' is displayed.</msg>
+<status status="PASS" starttime="20230825 14:18:40.720" endtime="20230825 14:18:40.740"/>
+</kw>
+<status status="PASS" starttime="20230825 14:18:40.720" endtime="20230825 14:18:40.740"/>
+</kw>
+<kw name="Click Male Gender" library="RegisterPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="gender-male"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230825 14:18:40.741" level="INFO">Clicking element 'xpath://*[@id="gender-male"]'.</msg>
+<status status="PASS" starttime="20230825 14:18:40.740" endtime="20230825 14:18:40.769"/>
+</kw>
+<status status="PASS" starttime="20230825 14:18:40.740" endtime="20230825 14:18:40.769"/>
+</kw>
+<kw name="First Name Input" library="RegisterPage">
+<arg>Becca</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${first_name_input}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230825 14:18:40.770" level="INFO">Typing text 'Becca' into text field 'xpath://*[@id="FirstName"]'.</msg>
+<status status="PASS" starttime="20230825 14:18:40.769" endtime="20230825 14:18:40.853"/>
+</kw>
+<status status="PASS" starttime="20230825 14:18:40.769" endtime="20230825 14:18:40.853"/>
+</kw>
+<kw name="Last Name Input" library="RegisterPage">
+<arg>Mak</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${last_name_input}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230825 14:18:40.854" level="INFO">Typing text 'Mak' into text field 'xpath://*[@id="LastName"]'.</msg>
+<status status="PASS" starttime="20230825 14:18:40.854" endtime="20230825 14:18:40.896"/>
+</kw>
+<status status="PASS" starttime="20230825 14:18:40.854" endtime="20230825 14:18:40.896"/>
+</kw>
+<kw name="Select Date Of Birth Day" library="RegisterPage">
+<arg>${DateOfBirthDay.FIRST}</arg>
+<msg timestamp="20230825 14:18:40.898" level="FAIL">Resolving variable '${DateOfBirthDay.FIRST}' failed: Variable '${DateOfBirthDay}' not found.</msg>
+<status status="FAIL" starttime="20230825 14:18:40.896" endtime="20230825 14:18:40.898"/>
+</kw>
+<kw name="Select Date Of Birth Month" library="RegisterPage">
+<arg>${DateOfBirthMonth.JANUARY}</arg>
+<status status="NOT RUN" starttime="20230825 14:18:40.898" endtime="20230825 14:18:40.898"/>
+</kw>
+<kw name="Select Date Of Birth Year" library="RegisterPage">
+<arg>${DateOfBirthYear.YEAR_2001}</arg>
+<status status="NOT RUN" starttime="20230825 14:18:40.898" endtime="20230825 14:18:40.898"/>
+</kw>
+<kw name="Register Email Input" library="RegisterPage">
+<arg>becca@gmail.com</arg>
+<status status="NOT RUN" starttime="20230825 14:18:40.899" endtime="20230825 14:18:40.899"/>
+</kw>
+<kw name="Select Newsletter Checkbox" library="RegisterPage">
+<status status="NOT RUN" starttime="20230825 14:18:40.899" endtime="20230825 14:18:40.899"/>
+</kw>
+<status status="FAIL" starttime="20230825 14:18:35.726" endtime="20230825 14:18:40.899">Resolving variable '${DateOfBirthDay.FIRST}' failed: Variable '${DateOfBirthDay}' not found.</status>
+</test>
+<status status="FAIL" starttime="20230825 14:18:35.633" endtime="20230825 14:18:40.900"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="NopCommerce">NopCommerce</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
