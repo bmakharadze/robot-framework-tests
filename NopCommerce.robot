@@ -12,6 +12,12 @@ Variables       enums/DateOfBirthDay.py
 Variables       enums/DateOfBirthMonth.py
 Variables       enums/DateOfBirthYear.py
 
+Suite Setup     Open Browser    ${URL}    ${BROWSER}    executable_path=${CHROME_BINARY}
+Suite Teardown  Close Browser
+
+Test Setup      Log To Console    Opening Browser
+Test Teardown   Log To Console    Closing Browser
+
 *** Variables ***
 ${BROWSER}        Chrome
 ${URL}            https://demo.nopcommerce.com/
@@ -19,6 +25,7 @@ ${CHROME_BINARY}  /Users/bekamakharadze/documents/selenium/chromedriver
 
 *** Test Cases ***
 Register Test
+    [Tags]          Registering on the website with credentials.
     Launch Browser
     Click Home Page Register Button
     Is Register Page Opened
@@ -32,6 +39,7 @@ Register Test
     Select Newsletter Checkbox
 
 Login Test
+    [Tags]          Loginning in with valid credentials.
     Launch Browser
     Click Home Page Login Button
     Is Login Page Opened
@@ -41,6 +49,7 @@ Login Test
     Close Browser
 
 Add To Cart Test
+    [Tags]          Finding product by name and adding it to the cart.
     Launch Browser
     Click Computers Button
     Is Computers Page Opened
@@ -50,6 +59,7 @@ Add To Cart Test
     Click Add To Cart Button            2
 
 Order Test
+    [Tags]          Finding few products on Home Page, adding to card and ordersing.
     Launch Browser
     Click Product from Home Page       HTC One M8 Android L 5.0 Lollipop
     Click Add To Cart Button            18
@@ -65,7 +75,6 @@ Order Test
 
 *** Keywords ***
 Launch Browser
-    Open Browser        ${URL}    ${BROWSER}    executable_path=${CHROME_BINARY}
     Maximize Browser Window
     Is Home Page Opened
 
@@ -81,4 +90,3 @@ Fill Shipping Address
     Zip Input                           52200
     Phone Input                         3424325342534
     Click Continue Button
-
