@@ -1,0 +1,20 @@
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.robotframework</groupId>
+            <artifactId>robotframework-maven-plugin</artifactId>
+            <version>2.1.0</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                    <configuration>
+                        <!-- Specify your test suite or test case files -->
+                        <testCasesDirectory>${project.basedir}</testCasesDirectory>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>

@@ -27,15 +27,15 @@ Last Name Input
 
 Select Date Of Birth Day
     [Arguments]    ${day_value}
-    Select From List By Value    ${birth_day_select}     ${day_value}
+    Select From List By Label    ${birth_day_select}     ${day_value}
 
 Select Date Of Birth Month
     [Arguments]    ${month_value}
-    Select From List By Value    ${birth_month_select}    ${month_value}
+    Select From List By Label    ${birth_month_select}    ${month_value}
 
 Select Date Of Birth Year
     [Arguments]    ${year_value}
-    Select From List By Value    ${birth_year_select}    ${year_value}
+    Select From List By Label    ${birth_year_select}    ${year_value}
 
 Register Email Input
     [Arguments]     ${email}

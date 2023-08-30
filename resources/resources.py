@@ -1,0 +1,16 @@
+BROWSER = "Chrome"
+URL = "https://demo.nopcommerce.com/"
+CHROME_BINARY = "/Users/bekamakharadze/documents/selenium/chromedriver"
+
+MAIL = "becca@gmail.com"
+NAME = "Becca"
+SURNAME = "Mak"
+PASSWORD = "Test123"
+PRODUCT_NAME_1 = "Digital Storm VANQUISH 3 Custom Performance PC"
+PRODUCT_NAME_2 = "HTC One M8 Android L 5.0 Lollipop"
+PRODUCT_NAME_3 = "Apple MacBook Pro 13-inch"
+
+CITY = "New York"
+ADDRESS = "Brodway"
+ZIPCODE = "3423244"
+PHONE_NUMBER = "99943423454"

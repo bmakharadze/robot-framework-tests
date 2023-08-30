@@ -1,5 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library    String
 
 *** Variables ***
 ${browser}          Chrome
@@ -54,6 +55,19 @@ TableValidations
     table column should contain         xpath://table[@name='BookTable']        2       Author
     table row should contain            xpath://table[@name= 'BookTable']       4       Learn JS
 
+Nested container
+    ${nested} =    Evaluate    [['a', 'b', 'c'], {'key': ['x', 'y']}]
+    Log Many    @{nested}[0]         # Logs 'a', 'b' and 'c'.
+    Log Many    @{nested}[1][key]    # Logs 'x' and 'y'.
+
+Slice
+    ${items} =    Create List    first    second    third
+    Log Many    @{items}[1:]         # Logs 'second' and  'third'.
+
+Return One Value Test
+    ${result}    Return One Value    Hello, Robot
+    Log    Returned Value: ${result}
+
 *** Keywords ***
 launchBrowser
     [Arguments]         ${appurl}   ${appbrowser}   ${executable_path}
@@ -61,3 +75,11 @@ launchBrowser
     Maximize Browser Window
     ${title}=           Get Title
     [Return]            ${title}
+
+Return One Value
+    [Arguments]    ${arg}
+    [Documentation]    Return a value unconditionally.
+    ...                Notice that keywords after RETURN are not executed.
+    ${value} =    Convert To Upper Case    ${arg}
+    RETURN    ${value}
+    Fail    Not executed
