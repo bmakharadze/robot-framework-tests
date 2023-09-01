@@ -1,11 +1,11 @@
 *** Settings ***
 Library     SeleniumLibrary
-Library    String
+Library     String
 
 *** Variables ***
 ${browser}          Chrome
 ${url}               http://swisnl.github.io/jQuery-contextMenu/demo.html
-${chrome_binary}    /Users/bekamakharadze/documents/selenium/chromedriver.exe
+${chrome_binary}    /Users/bekamakharadze/documents/selenium/chromedriver
 
 *** Test Cases ***
 Mouse Actions Test
@@ -67,6 +67,28 @@ Slice
 Return One Value Test
     ${result}    Return One Value    Hello, Robot
     Log    Returned Value: ${result}
+
+Different mouse actions
+    launchBrowser           https://demoqa.com/droppable/     ${browser}      ${chrome_binary}
+    Drag And Drop           xpath://*[@id="draggable"]       xpath://*[@id="droppable"]
+    Go To                   https://demoqa.com/selectable
+    Sleep       2
+    Mouse Down              //*[@id="demo-tabpane-list"]/ul/li[1]
+    Sleep       2
+    Mouse Up                //*[@id="demo-tabpane-list"]/ul/li[1]
+    Mouse Over              //*[@id="demo-tabpane-list"]/ul/li[2]
+    Sleep       2
+    Mouse Out               //*[@id="demo-tabpane-list"]/ul/li[2]
+    Go To                   https://demoqa.com/sortable
+    Drag And Drop           //*[contains(text(), 'One')]     //*[contains(text(), 'Six')]
+    Drag And Drop           //*[contains(text(), 'Two')]     //*[contains(text(), 'Six')]
+    Drag And Drop           //*[contains(text(), 'Three')]     //*[contains(text(), 'Six')]
+    Drag And Drop           //*[contains(text(), 'Four')]     //*[contains(text(), 'Six')]
+    Drag And Drop           //*[contains(text(), 'Five')]     //*[contains(text(), 'Six')]
+    Sleep      2
+    Go To                   https://demoqa.com/date-picker
+    Click Element           //*[@id="dateAndTimePickerInput"]
+
 
 *** Keywords ***
 launchBrowser

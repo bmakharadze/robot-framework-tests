@@ -69,6 +69,13 @@ Order Test
     Fill Shipping Address
     Click Next Day Method Radio
 
+Check Products Presence
+    Launch Browser
+    Click Computers Button
+    Is Computers Page Opened
+    Click Desktops Button
+    Are Products Present
+
 *** Keywords ***
 Launch Browser
     Maximize Browser Window
