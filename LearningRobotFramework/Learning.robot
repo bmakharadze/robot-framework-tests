@@ -1,6 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     String
+Library    XML
 
 *** Variables ***
 ${browser}          Chrome
@@ -89,6 +90,27 @@ Different mouse actions
     Go To                   https://demoqa.com/date-picker
     Click Element           //*[@id="dateAndTimePickerInput"]
 
+Webelements
+    launchBrowser           https://google.com/     ${browser}      ${chrome_binary}
+    Maximize Browser Window
+    Sleep       2
+    Capture Element Screenshot                          xpath://textarea[@id="APjFqb"]
+    Assign Id To Element                name:btnK       NewID
+    Page Should Contain Element         NewID
+    Element Should Be Focused                           xpath://textarea[@id="APjFqb"]
+    Element Should Be Visible                           xpath://textarea[@id="APjFqb"]
+    Input Text                                          xpath://textarea[@id="APjFqb"]    Hello
+    Clear Element Text                                  xpath://textarea[@id="APjFqb"]
+    Sleep       2
+    Element Attribute Value Should Be   name:btnK       value       Google Search
+    Element Should Be Enabled           name:btnK
+    Element Should Not Be Visible       name:btnKgf
+    Element Should Contain                              xpath://*[@class="KxwPGc AghGtd"]/a[4]   How Search
+    Element Should Not Contain                          xpath://*[@class="KxwPGc AghGtd"]/a[4]   Google Search
+    Element Text Should Be                              xpath://*[@class="KxwPGc AghGtd"]/a[4]   How Search works
+    Element Text Should Not Be                          xpath://*[@class="KxwPGc AghGtd"]/a[4]   How Search
+    Double Click Element                                xpath://*[@class="lnXdpd"]
+    Click Element At Coordinates                        xpath://*[@class="lnXdpd"]    15      10
 
 *** Keywords ***
 launchBrowser
