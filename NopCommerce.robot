@@ -42,7 +42,6 @@ Login Test
     Login Email Input                   ${MAIL}
     Login Password Input                ${PASSWORD}
     Click Login Button
-    Close Browser
 
 Add To Cart Test
     [Tags]          Finding product by name and adding it to the cart.
@@ -75,6 +74,8 @@ Check Products Presence
     Is Computers Page Opened
     Click Desktops Button
     Are Products Present
+
+
 
 *** Keywords ***
 Launch Browser
